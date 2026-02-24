@@ -74,6 +74,7 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: transform 0.5s color 0.5s;
 }
 
 .box::before {
@@ -83,6 +84,7 @@ html {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.8);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .box.leftEffect::before {
@@ -91,4 +93,14 @@ html {
 
 .box.rightEffect::before {
   clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+}
+
+.box.leftEffect:hover i {
+  color: #fff;
+  transform: translate(-80%, -50%);
+}
+
+.box.rightEffect:hover i {
+  color: #fff;
+  transform: translate(-20%, -50%);
 }
